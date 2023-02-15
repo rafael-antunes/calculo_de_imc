@@ -13,9 +13,21 @@ function calculoImc (evento) {
     console.log(peso, altura); 
     console.log(typeof peso, typeof altura); 
 
+    if (!peso) {
+        resultado.innerHTML += `<p>Peso inválido</p>`;
+        return
+    }
+
+    if (!altura) {
+        resultado.innerHTML += `<p>Altura inválida</p>`;
+        return
+    }
+
     const imc = peso / (altura * altura);
 
     console.log(imc);
+
+
 
     if (imc >= 0 && imc <= 18.5) {
         resultado.innerHTML += `<p>Abaixo do peso</p>`;
